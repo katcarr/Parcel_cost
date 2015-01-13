@@ -1,10 +1,12 @@
 class Parcel
+
   define_method(:initialize) do |length, width, height, weight|
     @length = length
     @width = width
     @height = height
     @weight = weight
   end
+
   define_method(:volume) do
     if @length < 0 || @width < 0 || @height <0
       0
@@ -12,7 +14,6 @@ class Parcel
       @length * @width * @height
     end
   end
-
 
   define_method(:cost_to_ship) do
     if @weight > 0 && @weight <= 10
